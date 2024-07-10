@@ -8,7 +8,7 @@ repos:
       - id: end-of-file-fixer
       - id: trailing-whitespace
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.18.3
+    rev: v8.18.4
     hooks:
       - id: gitleaks
         entry: gitleaks protect -v --redact --staged --config .gitleaks.toml
