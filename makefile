@@ -1,7 +1,9 @@
-configure-commit-signature:
-	@echo "Signing commit..."
-	@bash ./src/scripts/sign_commits.sh jsburckhardt jsburckhardt@gmail.com
-
-purge-resources:
-	@echo "Purging resources..."
-	@bash ./src/scripts/purge_resources.sh
+PREFIX ?= sac
+deploy:
+	az deployment sub create --name secure-azure-connection \
+		--location eastus2 \
+		--template-file src/infra/main.bicep \
+		--parameters infra/main.bicepparam \
+		--parameters prefix=$(PREFIX) \
+		--parameters location=eastus2 \
+		--parameters ciConfig=@infra/computeInstances.json
