@@ -1,0 +1,46 @@
+{
+    "links": [
+      {
+        "name": "vpn-link-blob",
+        "dnsZoneName": "privatelink.blob.core.windows.net",
+        "networkLinkVpnName": "vpn-st-blob-link-vpn",
+        "vnetId": "/subscriptions/266966fb-4c39-4b07-a8b3-f1b1dff5670d/resourceGroups/rg-jb3-6cbk4/providers/Microsoft.Network/virtualNetworks/rg-jb3-6cbk4"
+      },
+      {
+        "name": "vpn-link-file",
+        "dnsZoneName": "privatelink.file.core.windows.net",
+        "networkLinkVpnName": "vpn-st-file-link-vpn",
+        "vnetId": "/subscriptions/266966fb-4c39-4b07-a8b3-f1b1dff5670d/resourceGroups/rg-jb3-6cbk4/providers/Microsoft.Network/virtualNetworks/rg-jb3-6cbk4"
+      },
+      {
+        "name": "vpn-link-srch",
+        "dnsZoneName": "privatelink.search.windows.net",
+        "networkLinkVpnName": "vpn-srch-link-vpn",
+        "vnetId": "/subscriptions/266966fb-4c39-4b07-a8b3-f1b1dff5670d/resourceGroups/rg-jb3-6cbk4/providers/Microsoft.Network/virtualNetworks/rg-jb3-6cbk4"
+      },
+      {
+        "name": "vpn-link-aoai",
+        "dnsZoneName": "privatelink.openai.azure.com",
+        "networkLinkVpnName": "vpn-aoai-link-vpn",
+        "vnetId": "/subscriptions/266966fb-4c39-4b07-a8b3-f1b1dff5670d/resourceGroups/rg-jb3-6cbk4/providers/Microsoft.Network/virtualNetworks/rg-jb3-6cbk4"
+      },
+      {
+        "name": "vpn-link-cog",
+        "dnsZoneName": "privatelink.cognitiveservices.azure.com",
+        "networkLinkVpnName": "vpn-cog-link-vpn",
+        "vnetId": "/subscriptions/266966fb-4c39-4b07-a8b3-f1b1dff5670d/resourceGroups/rg-jb3-6cbk4/providers/Microsoft.Network/virtualNetworks/rg-jb3-6cbk4"
+      },
+      {
+        "name": "vpn-link-notebooks",
+        "dnsZoneName": "privatelink.notebooks.azure.net",
+        "networkLinkVpnName": "vpn-notebook-link-vpn",
+        "vnetId": "/subscriptions/266966fb-4c39-4b07-a8b3-f1b1dff5670d/resourceGroups/rg-jb3-6cbk4/providers/Microsoft.Network/virtualNetworks/rg-jb3-6cbk4"
+      },
+      {
+        "name": "vpn-link-aml",
+        "dnsZoneName": "privatelink.api.azureml.ms",
+        "networkLinkVpnName": "vpn-aml-link-vpn",
+        "vnetId": "/subscriptions/266966fb-4c39-4b07-a8b3-f1b1dff5670d/resourceGroups/rg-jb3-6cbk4/providers/Microsoft.Network/virtualNetworks/rg-jb3-6cbk4"
+      }
+    ]
+}
