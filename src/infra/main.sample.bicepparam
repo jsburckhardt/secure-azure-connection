@@ -5,9 +5,9 @@ param identifier = 'jb3'
 param location = 'eastus2'
 param tagValues = {
   enddate: '31/10/2024'
-  team: 'taipan'
-  project: 'asktelstrav2'
-  creator: 'juan'
+  team: 'my team'
+  project: 'the project'
+  creator: 'the creator'
 }
 param newVpnGateway = false
 param newPrivateDnsResolver = false

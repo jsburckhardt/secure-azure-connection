@@ -1,5 +1,8 @@
 # Secure Azure Connection
 
+>[!CAUTION]
+>THIS IS A WORK IN PROGRESS.
+
 ## Overview
 
 The **Secure Azure Connection** project provides a comprehensive solution to deploy a Point-to-Site (P2S) VPN in Azure. This setup includes a private DNS resolver and scripts to connect the solution with other "hub" Virtual Networks (VNets), enabling VPN clients to interact seamlessly with Azure resources.
@@ -19,7 +22,7 @@ The **Secure Azure Connection** project provides a comprehensive solution to dep
 - **Bicep Templates:** Provides Bicep templates for resource deployment.
 - **Deployment Scripts:** Includes scripts to facilitate the deployment process.
 
-## Flow to confgure
+## Flow to configure
 
 landing peer
 ![alt text](image.png)
@@ -47,7 +50,7 @@ resources hub
    Execute the deployment script to deploy the resources:
 
    ```bash
-   ./deploy.sh
+   make deploy PREFIX=vpnaisv1
    ```
 
 4. **Connect to the VPN:**
@@ -62,14 +65,21 @@ resources hub
 - `scripts/`: Includes deployment and configuration scripts.
 - `vpn-setup/`: Instructions and scripts for setting up the VPN on client machines.
 
-## Contributing
+<!-- NOTES -->
+- CONFIGURE DNS
+- CREATE PEERING
 
-We welcome contributions to enhance the Secure Azure Connection project. Please read our [Contributing Guidelines](CONTRIBUTING.md) for more information.
+![alt text](image-2.png)
 
-## License
+- CONFIGURE LINKS
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+update rg from make command to the rg with the dns zones
+update the vnetid with the vnetid from the vpn rg
 
-## Support
+- configure vpn
 
-For any issues or questions, please open an issue in the [GitHub Issues](https://github.com/your-repo/secure-azure-connection/issues) section of the repository.
+ADD CERTIFICATE (root)
+add ip
+ssl/openvpn
+
+- DOWNLOAD CLIENT

@@ -35,7 +35,7 @@ param inboundPrivateIpAddress string = '10.1.254.5'
 // ##########################################
 
 resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
-  name: !empty(rgName) ? rgName : '${abbrs.resourcesResourceGroups}-${prefix}-${uniqueSuffix}'
+  name: !empty(rgName) ? rgName : '${abbrs.resourcesResourceGroups}${prefix}-${uniqueSuffix}'
   location: location
   tags: tagValues
 }
@@ -44,8 +44,8 @@ module vnetModule 'modules/vnet.bicep' = {
   name: 'vnetModule'
   scope: rg
   params: {
-    vnetName: '${abbrs.resourcesResourceGroups}${prefix}-${uniqueSuffix}'
-    subnetPrivateDnsResolverName: '${abbrs.networkVirtualNetworksSubnets}-PrivateDnsResolverSubnet'
+    vnetName: '${abbrs.networkVirtualNetworks}${prefix}-${uniqueSuffix}'
+    subnetPrivateDnsResolverName: '${abbrs.networkVirtualNetworksSubnets}PrivateDnsResolverSubnet'
     location: location
     tagValues: tagValues
     addressPrefixes: ['10.1.0.0/16']
@@ -74,7 +74,6 @@ module dnsResolver 'modules/privateDnsResolver.bicep' = if (newPrivateDnsResolve
   }
 }
 
-
 // ##########################################
 // Outputs
 // ##########################################
@@ -82,3 +81,6 @@ module dnsResolver 'modules/privateDnsResolver.bicep' = if (newPrivateDnsResolve
 // dns resolver
 output privateDnsResolverSubnetId string = vnetModule.outputs.privateDnsResolverSubnetId
 output inboundPrivateIpAddress string = inboundPrivateIpAddress
+output vnetId string = vnetModule.outputs.vnetId
+output vnetName string = vnetModule.outputs.vnetName
+output resourceGroupName string = rg.name

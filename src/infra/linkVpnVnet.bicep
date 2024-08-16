@@ -1,4 +1,5 @@
 param linkConfig object
+param vnetId string
 
 module vpnLinks 'modules/privateLinkEndpoints.bicep' = [
   for link in linkConfig.links: {
@@ -6,7 +7,7 @@ module vpnLinks 'modules/privateLinkEndpoints.bicep' = [
     params: {
       dnsZoneName: link.dnsZoneName
       networkLinkVpnName: link.networkLinkVpnName
-      vnetId: link.vnetId
+      vnetId: vnetId
     }
   }
 ]

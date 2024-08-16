@@ -9,10 +9,12 @@ deploy:
 		--parameters newVpnGateway=true \
 		--parameters newPrivateDnsResolver=true
 
-
-
-link:
+links:
+	az deployment sub show --name aistudio-managed-vnet --query properties.outputs > hub.output.json
+	targetVnetId=$$(jq -r '.vnetId.value' hub.output.json); \
+	targetResourGroupName=$$(jq -r '.rgName.value' vpn.output.json); \
 	az deployment group create --name vpnlinks \
-		--resource-group rg-jb36cbk4 \
+		--resource-group $$targetResourGroupName \
 		--template-file src/infra/linkVpnVnet.bicep \
+		--parameters vnetId=$$vnetId \
 		--parameters linkConfig=@src/infra/linkConfigs.json
