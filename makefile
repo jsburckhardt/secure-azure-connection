@@ -11,10 +11,11 @@ deploy:
 
 links:
 	az deployment sub show --name aistudio-managed-vnet --query properties.outputs > hub.output.json
-	targetVnetId=$$(jq -r '.vnetId.value' hub.output.json); \
-	targetResourGroupName=$$(jq -r '.rgName.value' vpn.output.json); \
+	az deployment sub show --name secure-azure-connection --query properties.outputs > vpn.output.json
+	targetVnetId=$$(jq -r '.vnetId.value' vpn.output.json); \
+	targetResourGroupName=$$(jq -r '.rgName.value' hub.output.json); \
 	az deployment group create --name vpnlinks \
 		--resource-group $$targetResourGroupName \
 		--template-file src/infra/linkVpnVnet.bicep \
-		--parameters vnetId=$$vnetId \
+		--parameters vnetId=$$targetVnetId \
 		--parameters linkConfig=@src/infra/linkConfigs.json
