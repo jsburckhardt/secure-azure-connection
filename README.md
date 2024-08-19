@@ -22,14 +22,6 @@ The **Secure Azure Connection** project provides a comprehensive solution to dep
 - **Bicep Templates:** Provides Bicep templates for resource deployment.
 - **Deployment Scripts:** Includes scripts to facilitate the deployment process.
 
-## Flow to configure
-
-landing peer
-![alt text](image.png)
-
-resources hub
-![alt text](image-1.png)
-
 ## Deployment Instructions
 
 1. **Clone the Repository:**
@@ -53,33 +45,23 @@ resources hub
    make deploy PREFIX=vpnaisv1
    ```
 
-4. **Connect to the VPN:**
-   Follow the provided instructions in the `vpn-setup` directory to configure your desktop to connect to the Azure P2S VPN.
+4. **Run VNET configuration script**
 
-5. **Verify DNS Resolution:**
-   Ensure that your VPN clients can resolve private endpoints without modifying the hosts files.
+   The vnet configuration script is in charge of configuring the VNET with the DNS settings and configuring the peering. To run the script execute the following command:
 
-## Repository Structure
+   ```bash
+   make configure
+   ```
 
-- `bicep/`: Contains Bicep templates for deploying Azure resources.
-- `scripts/`: Includes deployment and configuration scripts.
-- `vpn-setup/`: Instructions and scripts for setting up the VPN on client machines.
+5. **Configure VPN**
 
-<!-- NOTES -->
-- CONFIGURE DNS
-- CREATE PEERING
+   TODO: steps
+      - create self-sign cert
+      - get public key for CA
+      - configure p2s vpn with openvpn and ikev2
+      - add cert
+      - download client
 
-![alt text](image-2.png)
+## Issues
 
-- CONFIGURE LINKS
-
-update rg from make command to the rg with the dns zones
-update the vnetid with the vnetid from the vpn rg
-
-- configure vpn
-
-ADD CERTIFICATE (root)
-add ip
-ssl/openvpn
-
-- DOWNLOAD CLIENT
+- currently the azurevpn config is not pulling all the CAs you add into the configuration. Here is a video on how to fix it [link](https://youtu.be/0KiSMfP3iGw?si=pQ_ZMX82Fgc2seEh)

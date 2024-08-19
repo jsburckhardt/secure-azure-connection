@@ -83,4 +83,4 @@ output privateDnsResolverSubnetId string = vnetModule.outputs.privateDnsResolver
 output inboundPrivateIpAddress string = inboundPrivateIpAddress
 output vnetId string = vnetModule.outputs.vnetId
 output vnetName string = vnetModule.outputs.vnetName
-output resourceGroupName string = rg.name
+output rgName string = rg.name
