@@ -47,7 +47,9 @@ The **Secure Azure Connection** project provides a comprehensive solution to dep
 
 4. **Run VNET configuration script**
 
-   The vnet configuration script is in charge of configuring the VNET with the DNS settings and configuring the peering. To run the script execute the following command:
+   The vnet configuration script is in charge of configuring the VNET with the DNS settings and configuring the peering.
+
+   First create a copy of the `sample.env` file and configure your `.env` file with the correct values.
 
    ```bash
    make configure
@@ -64,4 +66,4 @@ The **Secure Azure Connection** project provides a comprehensive solution to dep
 
 ## Issues
 
-- currently the azurevpn config is not pulling all the CAs you add into the configuration. Here is a video on how to fix it [link](https://youtu.be/0KiSMfP3iGw?si=pQ_ZMX82Fgc2seEh)
+- currently the **azurevpn config** is not pulling all the CAs you add into the configuration. Here is a video on how to fix it [link](https://youtu.be/0KiSMfP3iGw?si=pQ_ZMX82Fgc2seEh)
