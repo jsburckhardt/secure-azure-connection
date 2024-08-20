@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 ##############################################
 ### Get details from the deployment output ###
@@ -32,7 +33,7 @@ fi
 # Extract the required values from the deployment output
 DNS_SERVER=$(jq -r '.inboundPrivateIpAddress.value' "$vpn_output_path")
 VPN_VNET_ID=$(jq -r '.vnetId.value' "$vpn_output_path")
-VPN_VNET_RG=$(jq -r '.resourceGroupName.value' "$vpn_output_path")
+VPN_VNET_RG=$(jq -r '.rgName.value' "$vpn_output_path")
 VPN_VNET_NAME=$(jq -r '.vnetName.value' "$vpn_output_path")
 HUB_VNET_ID="/subscriptions/$HUB_SUBSCRIPTION_ID/resourceGroups/$HUB_VNET_RG/providers/Microsoft.Network/virtualNetworks/$HUB_VNET_NAME"
 

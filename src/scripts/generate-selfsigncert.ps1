@@ -1,6 +1,6 @@
 # windows example to create self sign certificate for vpn
-$rootName="p2srootcertv7"
-$clientName="p2sclientcertv7"
+$rootName="p2srootcertv8"
+$clientName="p2sclientcertv8"
 
 # root
 $params = @{

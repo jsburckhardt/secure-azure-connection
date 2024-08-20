@@ -10,15 +10,15 @@ deploy:
 		--parameters newPrivateDnsResolver=true
 
 links:
-	az deployment sub show --name aistudio-managed-vnet --query properties.outputs > hub.output.json
 	az deployment sub show --name secure-azure-connection --query properties.outputs > vpn.output.json
+	@export $$(cat .env | xargs) && \
 	vpnVnetId=$$(jq -r '.vnetId.value' vpn.output.json); \
-	hubResourGroupName=$$(jq -r '.rgName.value' hub.output.json); \
+	hubResourGroupName=$$HUB_VNET_RG; \
 	az deployment group create --name vpnlinks \
-		--resource-group $$hubResourGroupName \
-		--template-file src/infra/linkVpnVnet.bicep \
-		--parameters vnetId=$$vpnVnetId \
-		--parameters linkConfig=@src/infra/linkConfigs.json
+    	--resource-group $$hubResourGroupName \
+    	--template-file src/infra/linkVpnVnet.bicep \
+    	--parameters vnetId=$$vpnVnetId \
+    	--parameters linkConfig=@src/infra/linkConfigs.json
 
 configure:
 	./src/scripts/configure-vnet.sh
