@@ -1,0 +1,20 @@
+
+# Ignore compiled binaries
+*.class
+*.o
+*.dll
+*.exe
+.env
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+*.swp
+*.bak
+
+*.output.json
+main.bicepparam
+
+.env

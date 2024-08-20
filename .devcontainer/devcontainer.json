@@ -1,5 +1,5 @@
 {
-	"name": "Getting Started",
+	"name": "vpn2azure",
 	"image": "mcr.microsoft.com/devcontainers/universal:2",
 	"hostRequirements": {
 	  "cpus": 4
@@ -53,7 +53,8 @@
 				"files.insertFinalNewline": true,
 				"github.copilot.enable": {
 					"markdown": "true"
-				}
+				},
+				"terminal.integrated.defaultProfile.linux": "zsh"
 			}
 		}
 	},
