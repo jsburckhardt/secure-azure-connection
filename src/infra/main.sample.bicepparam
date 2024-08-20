@@ -1,7 +1,7 @@
 using './main.bicep'
 
 param rgName = ''
-param identifier = 'jb3'
+param identifier = 'someidentifier'
 param location = 'eastus2'
 param tagValues = {
   enddate: '31/10/2024'
