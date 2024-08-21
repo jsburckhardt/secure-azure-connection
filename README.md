@@ -7,6 +7,8 @@
 
 The **Secure Azure Connection** project provides a comprehensive solution to deploy a Point-to-Site (P2S) VPN in Azure. This setup includes a private DNS resolver and scripts to connect the solution with other "hub" Virtual Networks (VNets), enabling VPN clients to interact seamlessly with Azure resources.
 
+![overview](docs/overview.png)
+
 ## Video Tutorial/Explanation
 
 For a step-by-step guide on how to deploy and configure the **Secure Azure Connection** project, you can watch the following YouTube video:
