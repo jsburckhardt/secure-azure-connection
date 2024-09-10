@@ -105,4 +105,4 @@ This video provides detailed instructions on setting up the project, configuring
 
 ## Issues
 
-- currently the **azure vpn config** is not pulling all the CAs you add into the configuration. Here is a video on how to fix it [link](https://youtu.be/0KiSMfP3iGw?si=pQ_ZMX82Fgc2seEh)
+- Currently the **azure vpn config** is not pulling all the CAs you add into the configuration. Here is a video on how to fix it [link](https://youtu.be/0KiSMfP3iGw?si=pQ_ZMX82Fgc2seEh)
